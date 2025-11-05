@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Music - Productos</title>
+    <link rel="icon" type="image/png" href="../src/assets/favicon.png">
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body class="pagina-productos">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../src/assets/logo.png" alt="Retro Music Logo" class="logo-img">
+                <h1>Retro Music</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="productos.html" class="nav-link active">Productos</a>
+            <a href="carrito.html" class="nav-link">Carrito</a>
+            <a href="http://localhost:3000/admin" class="nav-link admin-link" target="_blank">Admin</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <div class="section-productos">
+                <div class="header">
+                    <h2>Catálogo de Productos</h2>
+                    <p class="saludo-cliente">Bienvenido, <span id="customerNameDisplay">Cliente</span></p>
+                </div>
+
+                <!-- Filtros -->
+                <div class="filtros">
+                    <div class="grupo-filtro">
+                        <label for="filtro-categoria">Categoría:</label>
+                        <select id="filtro-categoria">
+                            <option value="">Todas</option>
+                            <option value="vinilos">Discos de Vinilo</option>
+                            <option value="cds">CD's</option>
+                            <option value="reproductores">Reproductores</option>
+                        </select>
+                    </div>
+                    <div class="grupo-filtro">
+                        <input type="text" id="input-busqueda" placeholder="Buscar productos...">
+                    </div>
+                </div>
+
+                <!-- Lista de productos -->
+                <div id="lista-productos" class="grilla-productos">
+                    <!-- Los productos se cargarán dinámicamente -->
+                    <p class="cargando">Cargando productos...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+            <p>Desarrollado por: <strong>Estudiantes UTN</strong></p>
+        </footer>
+    </div>
+
+    <script src="../js/productos.js"></script>
+</body>
+</html>

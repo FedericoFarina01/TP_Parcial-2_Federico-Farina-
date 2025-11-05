@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Music - Inicio</title>
+    <link rel="icon" type="image/png" href="../src/assets/favicon.png">
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body class="pagina-inicio">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../src/assets/logo.png" alt="Retro Music Logo" class="logo-img">
+                <h1>Retro Music</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link active">Inicio</a>
+            <a href="productos.html" class="nav-link">Productos</a>
+            <a href="carrito.html" class="nav-link">Carrito <span id="cartCount" </a>
+            <a href="http://localhost:3000/admin" class="nav-link admin-link" target="_blank">Admin</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <div class="section-bienvenida">
+                <div class="card-bienvenida">
+                    <div class="header">
+                        <h2>¡Bienvenido a Retro Music!</h2>
+                        <p>Tu tienda de música retro y vintage</p>
+                    </div>
+                    
+                    <div class="form-bienvenida">
+                        <label for="nombre-Cliente">Para comenzar, ingresa tu nombre:</label>
+                        <input type="text" id="nombre-Cliente" placeholder="Ingrese su nombre" maxlength="100">
+                        <button id="btn-continuar" disabled>Continuar</button>
+                    </div>
+                    
+                    <div class="info-bienvenida">
+                        <h3>¿Qué encontrarás aquí?</h3>
+                        <div class="categorias">
+                            <div class="card-categorias">
+                                <div class="icon-categoria">🎵</div>
+                                <h4>Discos de Vinilo</h4>
+                                <p>Colección de vinilos clásicos y raros</p>
+                            </div>
+                            <div class="card-categorias">
+                                <div class="icon-categoria">💿</div>
+                                <h4>CD'S</h4>
+                                <p>Colección de cd's clásicos y raros</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+            <p>Desarrollado por: <strong>Estudiantes UTN</strong></p>
+        </footer>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Music - Carrito</title>
+    <link rel="icon" type="image/png" href="../src/assets/favicon.png">
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body class="pagina-carrito">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../src/assets/logo.png" alt="Retro Music Logo" class="logo-img">
+                <h1>Retro Music</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="productos.html" class="nav-link">Productos</a>
+            <a href="carrito.html" class="nav-link active">Carrito </a>
+            <a href="http://localhost:3000/admin" class="nav-link admin-link" target="_blank">Admin</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <div class="section-carrito">
+                <div class="header">
+                    <h2>Tu Carrito de Compras</h2>
+                    <p class="saludo-cliente">Cliente: <span id="customerNameDisplay">---</span></p>
+                </div>
+
+                <div class="contenido-carrito">
+                    <!-- Items del carrito -->
+                    <div class="items-carrito" id="items-carrito">
+                        <p class="carrito-vacio">Tu carrito está vacío</p>
+                    </div>
+
+                    <!-- Resumen del carrito -->
+                    <div class="resumen-carrito">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="linea-resumen">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="linea-resumen">
+                            <span>IVA (21%):</span>
+                            <span id="iva">$0.00</span>
+                        </div>
+                        <div class="linea-resumen total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                        <button id="btn-finalizar" class="btn-finalizar" disabled>Finalizar Compra</button>
+                        <a href="productos.html" class="continuar-comprando">← Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+            <p>Desarrollado por: <strong>Estudiantes UTN</strong></p>
+        </footer>
+    </div>
+
+    <script src="../js/carrito.js"></script>
+</body>
+</html>
