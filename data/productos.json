@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nombre": "Abbey Road - The Beatles",
+    "descripcion": "Edición especial en vinilo de colección con sonido remasterizado.",
+    "precio": 18000,
+    "imagen": "../src/assets/vinilo1.jpg",
+    "categoria": "vinilos",
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "Back in Black - AC/DC",
+    "descripcion": "Vinilo clásico de una de las bandas más emblemáticas del rock.",
+    "precio": 16500,
+    "imagen": "../src/assets/vinilo2.jpg",
+    "categoria": "vinilos",
+    "activo": true
+  },
+  {
+    "id": 3,
+    "nombre": "Thriller - Michael Jackson",
+    "descripcion": "El álbum más vendido de la historia en formato CD.",
+    "precio": 10000,
+    "imagen": "../src/assets/cd1.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 4,
+    "nombre": "Nevermind - Nirvana",
+    "descripcion": "El icónico álbum que marcó una generación.",
+    "precio": 9500,
+    "imagen": "../src/assets/cd2.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 5,
+    "nombre": "1989 - Taylor Swift",
+    "descripcion": "Versión deluxe con temas inéditos.",
+    "precio": 9000,
+    "imagen": "../src/assets/cd3.jpg",
+    "categoria": "cds",
+    "activo": false
+  }
+]

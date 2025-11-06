@@ -1,0 +1,13 @@
+# Ignore files that Biome handles
+frontend/**/*.js
+frontend/**/*.json
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Backend files (handled separately)
+backend/

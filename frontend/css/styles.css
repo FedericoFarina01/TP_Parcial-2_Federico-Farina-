@@ -1,0 +1,23 @@
+/* Tema claro (por defecto) */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Tema oscuro */
+body.tema-oscuro {
+  background-color: #121212;
+  color: white;
+}
+
+/* Ajustes para navbar y footer */
+body.tema-oscuro .navbar,
+body.tema-oscuro .footer {
+  background-color: #1e1e1e !important;
+  color: white;
+}
+
+/* Botón de tema opcional */
+#themeToggle {
+  transition: background-color 0.3s ease;
+}
