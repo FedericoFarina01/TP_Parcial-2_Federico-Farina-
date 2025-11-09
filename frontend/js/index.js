@@ -18,7 +18,7 @@ btnContinuar.addEventListener('click', () => {
   const nombre = inputNombre.value.trim();
   if (nombre.length >= 2) {
     // Guardar nombre en localStorage
-    localStorage.setItem('customerName', nombre);
+    localStorage.setItem('nombreCliente', nombre);
 
     // Redirigir a productos
     window.location.href = 'productos.html';

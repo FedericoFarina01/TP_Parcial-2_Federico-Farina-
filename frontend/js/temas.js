@@ -1,25 +1,25 @@
 // temas.js
 
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
+const botonTema = document.getElementById('themeToggle');
+const cuerpo = document.body;
 
 // Verificar si el usuario tenía un tema guardado
 const temaGuardado = localStorage.getItem('tema');
 
 if (temaGuardado === 'oscuro') {
-  body.classList.add('tema-oscuro');
-  themeToggle.textContent = '☀️';
+  cuerpo.classList.add('tema-oscuro');
+  botonTema.textContent = '☀️';
 }
 
 // Escuchar el click para cambiar el tema
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('tema-oscuro');
+botonTema.addEventListener('click', () => {
+  cuerpo.classList.toggle('tema-oscuro');
 
-  if (body.classList.contains('tema-oscuro')) {
-    themeToggle.textContent = '☀️';
+  if (cuerpo.classList.contains('tema-oscuro')) {
+    botonTema.textContent = '☀️';
     localStorage.setItem('tema', 'oscuro');
   } else {
-    themeToggle.textContent = '🌙';
+    botonTema.textContent = '🌙';
     localStorage.setItem('tema', 'claro');
   }
 });
