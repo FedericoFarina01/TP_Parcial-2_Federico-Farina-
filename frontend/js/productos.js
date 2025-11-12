@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
 
     return `
-    <div class="col-md-4 mb-4">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
       <div class="card" style="width: 18rem;">
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert(`${cantidadSeleccionada} unidad(es) de "${producto.nombre}" agregadas al carrito`);
     }
   });
+
   productosCache = await cargarProductos();
   mostrarProductos(productosCache);
 });

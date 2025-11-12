@@ -10,6 +10,15 @@ body.tema-oscuro {
   color: white;
 }
 
+body.tema-oscuro .navbar-text {
+  color: white !important;
+}
+
+/* Precios individuales del carrito*/
+body.tema-oscuro .text-muted {
+  color: #ccc !important;
+}
+
 /* Ajustes para navbar y footer */
 body.tema-oscuro .navbar,
 body.tema-oscuro .footer {
@@ -17,7 +26,7 @@ body.tema-oscuro .footer {
   color: white;
 }
 
-/* Botón de tema opcional */
+/* Botón de tema */
 #themeToggle {
   transition: background-color 0.3s ease;
 }
@@ -26,4 +35,19 @@ body.tema-oscuro .footer {
 .card-img-top {
   object-fit: cover;
   height: 250px;
+}
+
+/* Centrado general del contenido */
+.row {
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }

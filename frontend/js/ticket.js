@@ -60,15 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar productos
     if (productosElemento) {
       let html = '';
-      compra.productos.forEach((producto) => {
+      compra.productos.forEach((producto, index) => {
         html += `
           <div class="item-linea">
-            <div class="item-nombre">${producto.nombre}</div>
-            <div class="item-detalle">
-              <span>${producto.cantidad} x $${Number(producto.precio).toFixed(2)}</span>
-              <span class="item-total">$${(producto.precio * producto.cantidad).toFixed(2)}</span>
+            <div class="item-nombre fw-semibold">${producto.nombre}</div>
+            <div class="item-detalle d-flex justify-content-between align-items-center">
+              <span class="text-muted small">(${producto.cantidad} × $${Number(producto.precio).toFixed(2)})</span>
+              <span class="fw-bold">$${(producto.precio * producto.cantidad).toFixed(2)}</span>
             </div>
           </div>
+          ${index < compra.productos.length - 1 ? '<hr class="item-divisor">' : ''}
         `;
       });
       productosElemento.innerHTML = html;
