@@ -2,46 +2,110 @@
   {
     "id": 1,
     "nombre": "Abbey Road - The Beatles",
-    "descripcion": "Edición especial en vinilo de colección con sonido remasterizado.",
-    "precio": 18000,
-    "imagen": "../src/assets/vinilo1.jpg",
+    "descripcion": "El legendario álbum de 1969 que incluye clásicos como 'Come Together' y 'Here Comes the Sun'.",
+    "precio": 50000,
+    "imagen": "../img/abbey_road.jpg",
     "categoria": "vinilos",
     "activo": true
   },
   {
     "id": 2,
-    "nombre": "Back in Black - AC/DC",
-    "descripcion": "Vinilo clásico de una de las bandas más emblemáticas del rock.",
-    "precio": 16500,
-    "imagen": "../src/assets/vinilo2.jpg",
+    "nombre": " Voulez Vous - ABBA",
+    "descripcion": "Álbum de 1979 con éxitos disco como 'Chiquitita' y 'Dancing Queen'.",
+    "precio": 35000,
+    "imagen": "../img/voulez_vous.jpg",
     "categoria": "vinilos",
     "activo": true
   },
   {
     "id": 3,
-    "nombre": "Thriller - Michael Jackson",
-    "descripcion": "El álbum más vendido de la historia en formato CD.",
-    "precio": 10000,
-    "imagen": "../src/assets/cd1.jpg",
-    "categoria": "cds",
+    "nombre": "The Dark Side of the Moon - Pink Floyd",
+    "descripcion": "Obra maestra conceptual de 1973 con un sonido envolvente y temas icónicos como 'Time' y 'Money'.",
+    "precio": 60000,
+    "imagen": "../img/the_dark_side.jpg",
+    "categoria": "vinilos",
     "activo": true
   },
   {
     "id": 4,
-    "nombre": "Nevermind - Nirvana",
-    "descripcion": "El icónico álbum que marcó una generación.",
-    "precio": 9500,
-    "imagen": "../src/assets/cd2.jpg",
-    "categoria": "cds",
+    "nombre": "Master of Reality - Black Sabbath",
+    "descripcion": "Clásico álbum de 1971 que incluye 'Sweet Leaf' y 'Children of the Grave', pilares del heavy metal.",
+    "precio": 30000,
+    "imagen": "../img/master_of_reality.jpg",
+    "categoria": "vinilos",
     "activo": true
   },
   {
     "id": 5,
-    "nombre": "1989 - Taylor Swift",
-    "descripcion": "Versión deluxe con temas inéditos.",
-    "precio": 9000,
-    "imagen": "../src/assets/cd3.jpg",
+    "nombre": "Master of Puppets - Metallica",
+    "descripcion": "Álbum icónico de 1986 que definió el thrash metal con canciones como 'Master of Puppets' y 'Battery'.",
+    "precio": 40000,
+    "imagen": "../img/master_of_puppets.jpg",
+    "categoria": "vinilos",
+    "activo": true
+  },
+{
+    "id": 6,
+    "nombre": "Back in Black - AC/DC",
+    "descripcion": "El potente regreso de AC/DC en 1980 con himnos como 'Hells Bells' y 'You Shook Me All Night Long'.",
+    "precio": 38000,
+    "imagen": "../img/back_in_black.jpg",
+    "categoria": "vinilos",
+    "activo": true
+  },
+
+  {
+    "id": 7,
+    "nombre": "Toxicity - System of a Down",
+    "descripcion": "Álbum de 2001 que combina metal alternativo y crítica social con éxitos como 'Chop Suey!' y 'Toxicity'.",
+    "precio": 25000,
+    "imagen": "../img/toxicity.jpg",
     "categoria": "cds",
-    "activo": false
+    "activo": true
+  },
+  {
+    "id": 8,
+    "nombre": "Fallen - Evanescence",
+    "descripcion": "Álbum debut de 2003 con un sonido gótico y potente, destacando 'Bring Me to Life' y 'My Immortal'.",
+    "precio": 20000,
+    "imagen": "../img/fallen.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 9,
+    "nombre": "Hybrid Theory - Linkin Park",
+    "descripcion": "Álbum debut de 2000 que definió el nu metal con temas como 'In the End' y 'Crawling'.",
+    "precio": 22000,
+    "imagen": "../img/hybrid_theory.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 10,
+    "nombre": "Diamond Eyes - Deftones",
+    "descripcion": "Álbum de 2010 que mezcla fuerza y atmósfera, con temas intensos como 'Diamond Eyes' y 'Rocket Skates'.",
+    "precio": 15000,
+    "imagen": "../img/diamond_eyes.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 11,
+    "nombre": "Ten - Pearl Jam",
+    "descripcion": "Álbum debut de 1991 que marcó el grunge con éxitos como 'Alive' y 'Jeremy'.",
+    "precio": 19000,
+    "imagen": "../img/ten.jpg",
+    "categoria": "cds",
+    "activo": true
+  },
+  {
+    "id": 12,
+    "nombre": "Californication - Red Hot Chili Peppers",
+    "descripcion": "Álbum de 1999 que combina rock alternativo y funk con éxitos como 'Californication' y 'Scar Tissue'.",
+    "precio": 24000,
+    "imagen": "../img/californication.jpg",
+    "categoria": "cds",
+    "activo": true
   }
 ]

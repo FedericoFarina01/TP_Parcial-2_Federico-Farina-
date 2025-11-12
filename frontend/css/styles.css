@@ -21,3 +21,9 @@ body.tema-oscuro .footer {
 #themeToggle {
   transition: background-color 0.3s ease;
 }
+
+/* Estilos para las tarjetas de productos */
+.card-img-top {
+  object-fit: cover;
+  height: 250px;
+}

@@ -16,57 +16,25 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <a class="navbar-brand d-flex align-items-center">
           <img
             src="../src/assets/logo.png"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
           />
-          <span>Retro Music</span>
         </a>
 
-        <!-- Menú hamburguesa Bootstrap -->
+        <a href="index.html">Retro Music</a>
+
+        <!-- Botón tema claro/oscuro -->
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          id="themeToggle"
+          class="btn btn-outline-secondary rounded-circle p-2"
+          style="width: 40px; height: 40px"
         >
-          <span class="navbar-toggler-icon"></span>
+          🌙
         </button>
-
-        <!-- Links páginas -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="carrito.html">Carrito <span id="cartCount"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Admin</a>
-            </li>
-
-            <!-- Botón tema claro/oscuro -->
-            <li class="nav-item ms-lg-3">
-              <button
-                id="themeToggle"
-                class="btn btn-outline-secondary rounded-circle p-2"
-                style="width: 40px; height: 40px"
-              >
-                🌙
-              </button>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 
