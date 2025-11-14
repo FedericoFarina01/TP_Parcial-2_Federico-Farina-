@@ -1,26 +1,38 @@
-// Validación del nombre
-const inputNombre = document.getElementById('nombre-Cliente');
-const btnContinuar = document.getElementById('btn-continuar');
+document.addEventListener('DOMContentLoaded', () => {
+  // Administrar formulario de nombre
+  function administrarFormularioNombre() {
+    const inputNombre = document.getElementById('nombre-Cliente');
+    const btnContinuar = document.getElementById('btn-continuar');
 
-inputNombre.addEventListener('input', function () {
-  const nombre = this.value.trim();
-  btnContinuar.disabled = nombre.length < 2;
+    inputNombre.addEventListener('input', function () {
+      validarNombre(this, btnContinuar);
+    });
 
-  if (nombre.length >= 2) {
-    btnContinuar.classList.add('enabled');
-  } else {
-    btnContinuar.classList.remove('enabled');
+    btnContinuar.addEventListener('click', () => {
+      guardarYContinuar(inputNombre);
+    });
   }
-});
 
-// Continuar al catálogo
-btnContinuar.addEventListener('click', () => {
-  const nombre = inputNombre.value.trim();
-  if (nombre.length >= 2) {
-    // Guardar nombre en localStorage
-    localStorage.setItem('nombreCliente', nombre);
+  // Validar nombre
+  function validarNombre(input, boton) {
+    const nombre = input.value.trim();
+    boton.disabled = nombre.length < 2;
 
-    // Redirigir a productos
-    window.location.href = 'productos.html';
+    if (nombre.length >= 2) {
+      boton.classList.add('enabled');
+    } else {
+      boton.classList.remove('enabled');
+    }
   }
+
+  // Guardar y continuar
+  function guardarYContinuar(input) {
+    const nombre = input.value.trim();
+    if (nombre.length >= 2) {
+      localStorage.setItem('nombreCliente', nombre);
+      window.location.href = 'productos.html';
+    }
+  }
+
+  administrarFormularioNombre();
 });
