@@ -91,6 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Imprimir ticket
+  function imprimirTicket() {
+    const botonImprimir = document.getElementById('btn-imprimir');
+
+    if (botonImprimir) {
+      botonImprimir.addEventListener('click', () => {
+        window.print();
+      });
+    }
+  }
+
   mostrarTicket();
   administrarBotonSalir();
+  imprimirTicket();
+  descargarPDF();
 });

@@ -51,3 +51,57 @@ body.tema-oscuro .footer {
 .card:hover {
   transform: translateY(-4px);
 }
+
+/* Estilos para impresión del ticket */
+@media print {
+  /* Ocultar elementos innecesarios */
+  .navbar,
+  .footer,
+  .acciones-ticket,
+  #themeToggle {
+    display: none !important;
+  }
+
+  /* Ajustar body */
+  body {
+    background-color: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ajustar contenedor principal */
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Centrar ticket */
+  .contenedor-ticket {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  /* Ajustar ticket */
+  .ticket {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #333;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+  }
+
+  /* Asegurar que el texto sea negro */
+  .ticket * {
+    color: black !important;
+  }
+
+  /* Evitar saltos de página dentro del ticket */
+  .ticket {
+    page-break-inside: avoid;
+  }
+}
