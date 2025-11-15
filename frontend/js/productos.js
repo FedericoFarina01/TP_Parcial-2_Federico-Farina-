@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function crearTarjetaProducto(producto) {
     const carrito = obtenerCarrito();
     const productoEnCarrito = carrito.find((p) => p.id === producto.id);
+    const estaEnCarrito = productoEnCarrito !== undefined;
     const cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
 
     return `
@@ -51,15 +52,18 @@ document.addEventListener('DOMContentLoaded', async () => {
           <p class="card-text">${producto.descripcion}</p>
           <p class="text-primary fw-bold">$${producto.precio.toLocaleString()}</p>
 
-          ${cantidadEnCarrito > 0 ? `<p class="text-success small mb-2">En carrito: ${cantidadEnCarrito}</p>` : ''}
+          ${estaEnCarrito ? `<p class="text-success small mb-2">En carrito: ${cantidadEnCarrito}</p>` : ''}
 
-          <div class="d-flex gap-2 align-items-center">
-            <button class="btn btn-sm btn-outline-danger btn-restar" data-id="${producto.id}">-</button>
-            <span class="badge bg-secondary cantidad-badge" data-id="${producto.id}">0</span>
-            <button class="btn btn-sm btn-outline-success btn-sumar" data-id="${producto.id}">+</button>
-            <button class="btn btn-sm btn-primary flex-grow-1 btn-agregar" data-id="${producto.id}">
-              Agregar al carrito
-            </button>
+          <div class="d-flex gap-2">
+            ${
+              estaEnCarrito
+                ? `<button class="btn btn-sm btn-danger w-100 btn-eliminar" data-id="${producto.id}">
+                     🗑️ Eliminar del carrito
+                   </button>`
+                : `<button class="btn btn-sm btn-primary w-100 btn-agregar" data-id="${producto.id}">
+                     ➕ Agregar al carrito
+                   </button>`
+            }
           </div>
         </div>
       </div>
@@ -88,32 +92,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.addEventListener('click', (evento) => {
     const boton = evento.target;
 
-    // Sumar cantidad
-    if (boton.classList.contains('btn-sumar')) {
-      const idProducto = boton.dataset.id;
-      const cantidadElemento = document.querySelector(`.cantidad-badge[data-id="${idProducto}"]`);
-      cantidadElemento.textContent = Number(cantidadElemento.textContent) + 1;
-    }
-
-    // Restar cantidad
-    if (boton.classList.contains('btn-restar')) {
-      const idProducto = boton.dataset.id;
-      const cantidadElemento = document.querySelector(`.cantidad-badge[data-id="${idProducto}"]`);
-      const cantidadActual = Number(cantidadElemento.textContent);
-      if (cantidadActual > 0) cantidadElemento.textContent = cantidadActual - 1;
-    }
-
     // Agregar al carrito
     if (boton.classList.contains('btn-agregar')) {
       const idProducto = Number(boton.dataset.id);
-      const cantidadElemento = document.querySelector(`.cantidad-badge[data-id="${idProducto}"]`);
-      const cantidadSeleccionada = Number(cantidadElemento.textContent);
-
-      if (cantidadSeleccionada === 0) {
-        alert('Por favor, selecciona una cantidad');
-        return;
-      }
-
       const producto = productosCache.find((p) => p.id === idProducto);
       if (!producto) return;
 
@@ -121,21 +102,35 @@ document.addEventListener('DOMContentLoaded', async () => {
       const productoEnCarrito = carrito.find((p) => p.id === idProducto);
 
       if (productoEnCarrito) {
-        productoEnCarrito.cantidad += cantidadSeleccionada;
+        productoEnCarrito.cantidad += 1;
       } else {
         carrito.push({
           id: producto.id,
           nombre: producto.nombre,
           precio: producto.precio,
           imagen: producto.imagen,
-          cantidad: cantidadSeleccionada,
+          cantidad: 1,
         });
       }
 
       guardarCarrito(carrito);
-      cantidadElemento.textContent = '0';
       mostrarProductos(productosCache);
-      alert(`${cantidadSeleccionada} unidad(es) de "${producto.nombre}" agregadas al carrito`);
+      alert(`"${producto.nombre}" agregado al carrito`);
+    }
+
+    // Eliminar del carrito
+    if (boton.classList.contains('btn-eliminar')) {
+      const idProducto = Number(boton.dataset.id);
+      const producto = productosCache.find((p) => p.id === idProducto);
+      if (!producto) return;
+
+      if (confirm(`¿Deseas eliminar "${producto.nombre}" del carrito?`)) {
+        const carrito = obtenerCarrito();
+        const carritoActualizado = carrito.filter((p) => p.id !== idProducto);
+        guardarCarrito(carritoActualizado);
+        mostrarProductos(productosCache);
+        alert(`"${producto.nombre}" eliminado del carrito`);
+      }
     }
   });
 
