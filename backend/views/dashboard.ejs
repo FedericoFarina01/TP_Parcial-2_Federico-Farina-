@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retro Music - Dashboard Admin</title>
+    <title>Retro Music - Panel Admin</title>
     <link rel="icon" type="image/png" href="../src/assets/favicon.png" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link
@@ -13,17 +13,17 @@
   </head>
 
   <body class="pagina-dashboard">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <!-- Navbar Admin -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <a class="navbar-brand d-flex align-items-center" href="#">
           <img
             src="../src/assets/logo.png"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
           />
-          <span>Retro Music</span>
+          <span>Retro Music - Admin</span>
         </a>
 
         <button
@@ -39,26 +39,12 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link active" href="#">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="dashboard.html">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-link nav-link" id="logoutBtn">Cerrar sesión</button>
-            </li>
-
-            <!-- Botón tema claro/oscuro -->
-            <li class="nav-item ms-lg-3">
-              <button
-                id="themeToggle"
-                class="btn btn-outline-secondary rounded-circle p-2"
-                style="width: 40px; height: 40px"
-              >
-                🌙
-              </button>
+              <button class="btn btn-link nav-link text-light" id="logoutBtn">Cerrar sesión</button>
             </li>
           </ul>
         </div>
@@ -66,7 +52,7 @@
     </nav>
 
     <!-- Main -->
-    <div class="container" style="padding-top: 100px">
+    <div class="container mt-4">
       <main class="main-container">
         <div class="text-center mb-4">
           <h2>Panel de Administración</h2>
@@ -74,7 +60,7 @@
         </div>
 
         <div class="mb-4">
-          <a href="producto-form.html" class="btn btn-success"> ➕ Agregar Nuevo Producto </a>
+          <a href="#" class="btn btn-success"> ➕ Agregar Nuevo Producto </a>
         </div>
 
         <!-- Tabla de productos -->
@@ -108,6 +94,5 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/temas.js"></script>
   </body>
 </html>
