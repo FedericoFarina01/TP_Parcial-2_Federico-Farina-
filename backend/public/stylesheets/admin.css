@@ -1,0 +1,68 @@
+/* Estilos específicos para el panel de administración */
+
+/* Cards en tema oscuro */
+body.tema-oscuro .card {
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #333;
+}
+
+body.tema-oscuro .card-body {
+  background-color: #1e1e1e;
+}
+
+body.tema-oscuro .card-title {
+  color: white;
+}
+
+/* Tablas en tema oscuro */
+body.tema-oscuro .table {
+  color: white;
+  background-color: transparent;
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+}
+
+body.tema-oscuro .table thead th {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: white;
+}
+
+body.tema-oscuro .table tbody tr {
+  background-color: transparent;
+}
+
+body.tema-oscuro .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+body.tema-oscuro .table td,
+body.tema-oscuro .table th {
+  border-color: #444;
+  color: white;
+}
+
+/* Badges en tema oscuro */
+body.tema-oscuro .badge {
+  color: white;
+}
+
+/* Inputs y forms en tema oscuro */
+body.tema-oscuro .form-control {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: white;
+}
+
+body.tema-oscuro .form-control:focus {
+  background-color: #2d2d2d;
+  border-color: #666;
+  color: white;
+}
+
+body.tema-oscuro .form-label {
+  color: white;
+}
