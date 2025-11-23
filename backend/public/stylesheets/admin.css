@@ -63,6 +63,10 @@ body.tema-oscuro .form-control:focus {
   color: white;
 }
 
+body.tema-oscuro .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 body.tema-oscuro .form-label {
   color: white;
 }

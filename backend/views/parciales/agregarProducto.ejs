@@ -1,0 +1,77 @@
+<!-- Modal Agregar Producto -->
+<div class="modal fade" id="modalAgregarProducto">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">➕ Agregar Nuevo Producto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formProducto">
+          <!-- Nombre -->
+          <div class="mb-3">
+            <label for="nombre" class="form-label">🎵 Nombre *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Ej: Abbey Road - The Beatles"
+              required
+            />
+          </div>
+
+          <!-- Descripción -->
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">📝 Descripción</label>
+            <textarea
+              class="form-control"
+              id="descripcion"
+              rows="3"
+              placeholder="Descripción del producto (opcional)"
+            ></textarea>
+          </div>
+
+          <!-- Categoría -->
+          <div class="mb-3">
+            <label for="categoria" class="form-label">🏷️ Categoría *</label>
+            <select class="form-control" id="categoria" required>
+              <option value="">Seleccione una categoría</option>
+              <option value="vinilos">🎵 Vinilo</option>
+              <option value="cds">💿 CD</option>
+            </select>
+          </div>
+
+          <!-- Precio -->
+          <div class="mb-3">
+            <label for="precio" class="form-label">💰 Precio *</label>
+            <div class="input-group">
+              <span class="input-group-text">$</span>
+              <input
+                type="number"
+                class="form-control"
+                id="precio"
+                placeholder="0"
+                min="0"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Imagen -->
+          <div class="mb-3">
+            <label for="imagen" class="form-label">📷 Imagen</label>
+            <input type="file" class="form-control" id="imagen" accept="image/*" />
+            <small class="text-muted">Formatos: JPG, PNG, GIF. Máximo: 2MB</small>
+            <!-- Preview -->
+            <div id="preview" style="display: none; margin-top: 10px;">
+              <p class="text-muted">Vista previa:</p>
+              <img id="previewImg" src="" class="img-thumbnail" style="max-width: 200px;">
+            </div>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" form="formProducto" class="btn btn-success">💾 Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

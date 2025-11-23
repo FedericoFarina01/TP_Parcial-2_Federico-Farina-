@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
 
-    
+      // Credenciales demo
       const ADMIN_EMAIL = 'admin@retromusic.com';
       const ADMIN_PASSWORD = 'admin123';
 
       if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-
+        // Login ok
         window.location.href = '/admin/dashboard';
       } else {
-        
+        // Error login
         alert('Credenciales incorrectas. Intente nuevamente.');
         passwordInput.value = '';
         passwordInput.focus();
