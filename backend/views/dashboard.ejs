@@ -59,9 +59,9 @@
                           <div class="btn-group btn-group-sm" role="group">
                             <button class="btn btn-warning" disabled>✏️ Editar</button>
                             <% if (producto.activo) { %>
-                              <button class="btn btn-danger" disabled>🗑️ Desactivar</button>
+                              <button class="btn btn-danger btn-toggle" data-id="<%= producto.id %>" data-estado="false">🗑️ Desactivar</button>
                             <% } else { %>
-                              <button class="btn btn-success" disabled>✅ Activar</button>
+                              <button class="btn btn-success btn-toggle" data-id="<%= producto.id %>" data-estado="true">✅ Activar</button>
                             <% } %>
                           </div>
                         </td>

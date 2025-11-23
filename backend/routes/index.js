@@ -67,4 +67,27 @@ router.post('/admin/productos', function(req, res, next) {
   }
 });
 
+/* GET cambiar estado del producto (activar/desactivar) */
+router.get('/admin/productos/toggle/:id/:estado', function(req, res) {
+  // Obtener datos de la URL
+  const id = parseInt(req.params.id);
+  const nuevoEstado = req.params.estado === 'true';
+  
+  // Leer archivo de productos
+  const ruta = path.join(__dirname, '../../data/productos.json');
+  const productos = JSON.parse(fs.readFileSync(ruta, 'utf-8'));
+  
+  // Buscar y modificar el producto
+  const producto = productos.find(p => p.id === id);
+  if (producto) {
+    producto.activo = nuevoEstado;
+  }
+  
+  // Guardar cambios
+  fs.writeFileSync(ruta, JSON.stringify(productos, null, 2));
+  
+  // Volver al dashboard
+  res.redirect('/admin/dashboard');
+});
+
 module.exports = router;
