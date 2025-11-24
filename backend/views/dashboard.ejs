@@ -11,9 +11,9 @@
         </div>
 
         <div class="mb-4">
-          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+          <a href="/admin/productos/nuevo" class="btn btn-success">
             ➕ Agregar Producto
-          </button>
+          </a>
         </div>
 
         <!-- Tabla de productos -->
@@ -57,7 +57,7 @@
                         </td>
                         <td>
                           <div class="btn-group btn-group-sm" role="group">
-                            <button class="btn btn-warning" disabled>✏️ Editar</button>
+                            <a href="/admin/productos/<%= producto.id %>/editar" class="btn btn-warning">✏️ Editar</a>
                             <% if (producto.activo) { %>
                               <button class="btn btn-danger btn-toggle" data-id="<%= producto.id %>" data-estado="false">🗑️ Desactivar</button>
                             <% } else { %>
@@ -79,7 +79,5 @@
         </div>
       </main>
     </div>
-
-    <%- include('parciales/agregarProducto') %>
 
 <%- include('parciales/footer') %>

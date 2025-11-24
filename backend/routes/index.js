@@ -90,4 +90,65 @@ router.get('/admin/productos/toggle/:id/:estado', function(req, res) {
   res.redirect('/admin/dashboard');
 });
 
+/* GET pagina agregar producto */
+router.get('/admin/productos/nuevo', function(req, res) {
+  res.render('parciales/agregarProducto', { 
+    title: 'Retro Music - Agregar Producto'
+  });
+});
+
+/* GET pagina editar producto */
+router.get('/admin/productos/:id/editar', function(req, res) {
+  const id = parseInt(req.params.id);
+  
+  // Leer archivo de productos
+  const ruta = path.join(__dirname, '../../data/productos.json');
+  const productos = JSON.parse(fs.readFileSync(ruta, 'utf-8'));
+  
+  // Buscar el producto
+  const producto = productos.find(p => p.id === id);
+  
+  if (!producto) {
+    return res.redirect('/admin/dashboard');
+  }
+  
+  res.render('parciales/editarProducto', { 
+    title: 'Retro Music - Editar Producto',
+    producto: producto
+  });
+});
+
+/* POST editar producto */
+router.post('/admin/productos/:id', function(req, res) {
+  const id = parseInt(req.params.id);
+  
+  try {
+    // Leer archivo de productos
+    const ruta = path.join(__dirname, '../../data/productos.json');
+    const productos = JSON.parse(fs.readFileSync(ruta, 'utf-8'));
+    
+    // Buscar el producto
+    const producto = productos.find(p => p.id === id);
+    if (!producto) {
+      return res.status(404).json({ success: false, error: 'Producto no encontrado' });
+    }
+    
+    // Actualizar datos
+    producto.nombre = req.body.nombre;
+    producto.descripcion = req.body.descripcion || '';
+    producto.precio = parseInt(req.body.precio);
+    producto.categoria = req.body.categoria;
+    producto.activo = req.body.activo;
+    producto.imagen = req.body.imagen;
+    
+    // Guardar cambios
+    fs.writeFileSync(ruta, JSON.stringify(productos, null, 2));
+    
+    res.json({ success: true, producto: producto });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ success: false, error: 'Error al actualizar' });
+  }
+});
+
 module.exports = router;

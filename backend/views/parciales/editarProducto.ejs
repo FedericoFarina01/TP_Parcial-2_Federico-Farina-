@@ -1,4 +1,4 @@
-<%- include('head', { title: 'Retro Music - Agregar Producto', bodyClass: 'pagina-agregar' }) %>
+<%- include('head', { title: 'Retro Music - Editar Producto', bodyClass: 'pagina-editar' }) %>
 
     <%- include('navbar') %>
 
@@ -6,14 +6,14 @@
     <div class="container mt-4">
       <main class="main-container">
         <div class="text-center mb-4">
-          <h2>➕ Agregar Nuevo Producto</h2>
-          <p class="text-muted">Completar información del producto</p>
+          <h2>✏️ Editar Producto</h2>
+          <p class="text-muted">Modificar información del producto</p>
         </div>
 
-        <!-- Formulario Agregar -->
+        <!-- Formulario Editar -->
         <div class="card shadow">
           <div class="card-body">
-            <form id="formProducto">
+            <form id="formEditar" data-producto-id="<%= producto.id %>">
               <!-- Nombre -->
               <div class="mb-3">
                 <label for="nombre" class="form-label">🎵 Nombre *</label>
@@ -21,7 +21,7 @@
                   type="text"
                   class="form-control"
                   id="nombre"
-                  placeholder="Ej: Abbey Road - The Beatles"
+                  value="<%= producto.nombre %>"
                   required
                 />
               </div>
@@ -33,8 +33,7 @@
                   class="form-control"
                   id="descripcion"
                   rows="3"
-                  placeholder="Descripción del producto (opcional)"
-                ></textarea>
+                ><%= producto.descripcion %></textarea>
               </div>
 
               <!-- Categoría -->
@@ -42,8 +41,8 @@
                 <label for="categoria" class="form-label">🏷️ Categoría *</label>
                 <select class="form-control" id="categoria" required>
                   <option value="">Seleccione una categoría</option>
-                  <option value="vinilos">🎵 Vinilo</option>
-                  <option value="cds">💿 CD</option>
+                  <option value="vinilos" <%= producto.categoria === 'vinilos' ? 'selected' : '' %>>🎵 Vinilo</option>
+                  <option value="cds" <%= producto.categoria === 'cds' ? 'selected' : '' %>>💿 CD</option>
                 </select>
               </div>
 
@@ -56,34 +55,37 @@
                     type="number"
                     class="form-control"
                     id="precio"
-                    placeholder="0"
+                    value="<%= producto.precio %>"
                     min="0"
                     required
                   />
                 </div>
               </div>
 
-              <!-- Imagen -->
+              <!-- Imagen actual -->
               <div class="mb-3">
-                <label for="imagen" class="form-label">📷 Imagen</label>
-                <input type="file" class="form-control" id="imagen" accept="image/*" />
-                <small class="text-muted">Formatos: JPG, PNG, GIF. Máximo: 2MB</small>
-                <!-- Preview -->
-                <div id="preview" style="display: none; margin-top: 10px;">
-                  <p class="text-muted">Vista previa:</p>
-                  <img id="previewImg" src="" class="img-thumbnail" style="max-width: 200px;">
+                <label class="form-label">📷 Imagen actual</label>
+                <div>
+                  <img id="imagenActual" src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="img-thumbnail" style="max-width: 200px;">
                 </div>
+              </div>
+
+              <!-- Nueva imagen -->
+              <div class="mb-3">
+                <label for="imagen" class="form-label">📷 Cambiar imagen (opcional)</label>
+                <input type="file" class="form-control" id="imagen" accept="image/*" />
+                <small class="text-muted">Deja vacío para mantener la imagen actual</small>
               </div>
 
               <!-- Estado -->
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="activo" checked />
+                <input type="checkbox" class="form-check-input" id="activo" <%= producto.activo ? 'checked' : '' %> />
                 <label class="form-check-label" for="activo">✅ Producto activo</label>
               </div>
 
               <!-- Botones -->
               <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-success">💾 Guardar</button>
+                <button type="submit" class="btn btn-warning">💾 Guardar Cambios</button>
                 <a href="/admin/dashboard" class="btn btn-secondary">❌ Cancelar</a>
               </div>
             </form>
