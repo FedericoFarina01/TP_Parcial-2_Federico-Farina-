@@ -57,29 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const nuevoProducto = {
-        nombre: nombre,
-        descripcion: descripcion || '',
-        categoria: categoria,
-        precio: precio,
-        activo: activo,
-        imagen: imagenFile ? `../img/${imagenFile.name}` : '../img/default.jpg'
-      };
+      const formData = new FormData();
+      formData.append('nombre', nombre);
+      formData.append('descripcion', descripcion || '');
+      formData.append('categoria', categoria);
+      formData.append('precio', precio);
+      formData.append('activo', activo);
+      
+      if (imagenFile) {
+        formData.append('imagen', imagenFile);
+      }
 
       try {
-        const response = await fetch('/admin/productos', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(nuevoProducto)
-        });
+        const { data } = await axios.post('/admin/productos', formData);
 
-        const data = await response.json();
-
-        if (response.ok && data.success) {
+        if (data.success) {
           alert('✅ Producto agregado exitosamente!');
-          const modalInstance = bootstrap.Modal.getInstance(modal);
-          modalInstance.hide();
-          setTimeout(() => window.location.reload(), 500);
+          window.location.href = '/admin/dashboard';
         } else {
           alert('❌ Error: ' + (data.error || 'Error desconocido'));
         }

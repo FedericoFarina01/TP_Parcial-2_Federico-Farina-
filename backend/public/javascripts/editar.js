@@ -1,8 +1,6 @@
-// Submit del formulario de edición
 document.getElementById('formEditar').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Obtener el ID del producto desde el data attribute
   const productoId = document.getElementById('formEditar').getAttribute('data-producto-id');
 
   const nombre = document.getElementById('nombre').value.trim();
@@ -11,40 +9,27 @@ document.getElementById('formEditar').addEventListener('submit', async (e) => {
   const precio = parseInt(document.getElementById('precio').value);
   const activo = document.getElementById('activo').checked;
   const imagenFile = document.getElementById('imagen').files[0];
-  const imagenActualSrc = document.getElementById('imagenActual').src;
-  
-  // Extraer solo la ruta relativa de la imagen (ej: ../img/abbey_road.jpg)
-  let imagenActual = imagenActualSrc;
-  if (imagenActualSrc.includes('/img/')) {
-    const nombreImagen = imagenActualSrc.split('/img/')[1];
-    imagenActual = `../img/${nombreImagen}`;
-  }
 
   if (!nombre || !categoria || !precio) {
     alert('⚠️ Por favor complete todos los campos obligatorios');
     return;
   }
 
-  const producto = {
-    id: parseInt(productoId),
-    nombre: nombre,
-    descripcion: descripcion || '',
-    categoria: categoria,
-    precio: precio,
-    activo: activo,
-    imagen: imagenFile ? `../img/${imagenFile.name}` : imagenActual
-  };
+  const formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('descripcion', descripcion || '');
+  formData.append('categoria', categoria);
+  formData.append('precio', precio);
+  formData.append('activo', activo);
+  
+  if (imagenFile) {
+    formData.append('imagen', imagenFile);
+  }
 
   try {
-    const response = await fetch(`/admin/productos/${productoId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(producto)
-    });
+    const { data } = await axios.post(`/admin/productos/${productoId}`, formData);
 
-    const data = await response.json();
-
-    if (response.ok && data.success) {
+    if (data.success) {
       alert('✅ Producto actualizado exitosamente!');
       window.location.href = '/admin/dashboard';
     } else {
