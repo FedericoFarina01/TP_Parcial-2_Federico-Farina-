@@ -4,8 +4,8 @@ const productController = require('../controllers/productController');
 const agregarController = require('../controllers/agregarController');
 const editarController = require('../controllers/editarController');
 const authController = require('../controllers/authController');
-const { validarAgregar } = require('../middleware/validarAgregar');
-const { validarEditar } = require('../middleware/validarEditar');
+const { validarAgregar } = require('../middlewares/validarAgregar');
+const { validarEditar } = require('../middlewares/validarEditar');
 const multer = require('multer');
 
 const upload = multer({
