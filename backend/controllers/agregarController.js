@@ -19,24 +19,20 @@ exports.mostrarFormulario = (req, res) => {
 };
 
 exports.agregarProducto = (req, res) => {
-  try {
-    const productos = leerProductos();
-    
-    const nuevoProducto = {
-      id: productos.length > 0 ? Math.max(...productos.map(p => p.id)) + 1 : 1,
-      nombre: req.body.nombre,
-      descripcion: req.body.descripcion || '',
-      precio: parseInt(req.body.precio),
-      imagen: req.file ? `fotos/${req.file.filename}` : 'fotos/default.jpg',
-      categoria: req.body.categoria,
-      activo: req.body.activo !== false
-    };
-    
-    productos.push(nuevoProducto);
-    guardarProductos(productos);
-    
-    res.status(201).json({ success: true, producto: nuevoProducto });
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
-  }
+  const productos = leerProductos();
+  
+  const nuevoProducto = {
+    id: productos.length > 0 ? Math.max(...productos.map(p => p.id)) + 1 : 1,
+    nombre: req.body.nombre,
+    descripcion: req.body.descripcion || '',
+    precio: parseInt(req.body.precio),
+    imagen: req.file ? `fotos/${req.file.filename}` : 'fotos/default.jpg',
+    categoria: req.body.categoria,
+    activo: req.body.activo !== false
+  };
+  
+  productos.push(nuevoProducto);
+  guardarProductos(productos);
+  
+  res.status(201).json({ success: true, producto: nuevoProducto });
 };
