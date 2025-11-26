@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center">
           <img
-            src="../src/assets/logo.png"
+            src="../img/logo.jpg"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
@@ -38,77 +38,81 @@
     </nav>
 
     <!-- Main -->
-    <div class="container" style="padding-top: 100px">
-      <main class="main-container">
-        <div class="section-ticket">
-          <div class="header">
-            <h2>✓ ¡Compra Exitosa!</h2>
-            <p>Gracias por tu compra</p>
-          </div>
-
-          <div class="contenedor-ticket" id="contenedor-ticket">
-            <div class="ticket">
-              <div class="titulo-ticket">
-                <h3>🎵 Retro Music</h3>
-                <p>Tu tienda de música retro y vintage</p>
-              </div>
-
-              <div class="info-ticket">
-                <div class="linea-info">
-                  <span class="etiqueta">Ticket Nº:</span>
-                  <span class="valor" id="numero-ticket"></span>
-                </div>
-                <div class="linea-info">
-                  <span class="etiqueta">Fecha:</span>
-                  <span class="valor" id="fecha-ticket"></span>
-                </div>
-                <div class="linea-info">
-                  <span class="etiqueta">Cliente:</span>
-                  <span class="valor" id="nombre-cliente"></span>
-                </div>
-              </div>
-
-              <div class="divisor-ticket"></div>
-
-              <div class="items-ticket" id="items-ticket"></div>
-
-              <div class="divisor-ticket"></div>
-
-              <div class="totales-ticket">
-                <div class="linea-total">
-                  <span>Subtotal:</span>
-                  <span id="ticket-subtotal">$0.00</span>
-                </div>
-                <div class="linea-total">
-                  <span>IVA (21%):</span>
-                  <span id="ticket-iva">$0.00</span>
-                </div>
-                <div class="linea-total total">
-                  <span>TOTAL:</span>
-                  <span id="ticket-total">$0.00</span>
-                </div>
-              </div>
-
-              <div class="footer-ticket">
-                <p>¡Gracias por tu compra!</p>
-                <p>Vuelve pronto a Retro Music</p>
-              </div>
+    <div class="main-content">
+      <div class="container">
+        <main class="main-container">
+          <div class="section-ticket">
+            <div class="header">
+              <h2>✓ ¡Compra Exitosa!</h2>
+              <p>Gracias por tu compra</p>
             </div>
 
-            <div class="acciones-ticket">
-              <button id="btn-imprimir" class="btn-accion btn-imprimir">🖨️ Imprimir Ticket</button>
-              <button id="btn-salir" class="btn-accion btn-salir btn btn-danger">🚪 Salir</button>
+            <div class="contenedor-ticket" id="contenedor-ticket">
+              <div class="ticket">
+                <div class="titulo-ticket">
+                  <h3>🎵 Retro Music</h3>
+                  <p>Tu tienda de música retro y vintage</p>
+                </div>
+
+                <div class="info-ticket">
+                  <div class="linea-info">
+                    <span class="etiqueta">Ticket Nº:</span>
+                    <span class="valor" id="numero-ticket"></span>
+                  </div>
+                  <div class="linea-info">
+                    <span class="etiqueta">Fecha:</span>
+                    <span class="valor" id="fecha-ticket"></span>
+                  </div>
+                  <div class="linea-info">
+                    <span class="etiqueta">Cliente:</span>
+                    <span class="valor" id="nombre-cliente"></span>
+                  </div>
+                </div>
+
+                <div class="divisor-ticket"></div>
+
+                <div class="items-ticket" id="items-ticket"></div>
+
+                <div class="divisor-ticket"></div>
+
+                <div class="totales-ticket">
+                  <div class="linea-total">
+                    <span>Subtotal:</span>
+                    <span id="ticket-subtotal">$0.00</span>
+                  </div>
+                  <div class="linea-total">
+                    <span>IVA (21%):</span>
+                    <span id="ticket-iva">$0.00</span>
+                  </div>
+                  <div class="linea-total total">
+                    <span>TOTAL:</span>
+                    <span id="ticket-total">$0.00</span>
+                  </div>
+                </div>
+
+                <div class="footer-ticket">
+                  <p>¡Gracias por tu compra!</p>
+                  <p>Vuelve pronto a Retro Music</p>
+                </div>
+              </div>
+
+              <div class="acciones-ticket">
+                <button id="btn-imprimir" class="btn-accion btn-imprimir">
+                  🖨️ Imprimir Ticket
+                </button>
+                <button id="btn-salir" class="btn-accion btn-salir btn btn-danger">🚪 Salir</button>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
-        <p>Desarrollado por: <strong>Estudiantes UTN</strong></p>
-      </footer>
+        </main>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+      <p>Desarrollado por: <strong>Estudiantes UTN</strong></p>
+    </footer>
 
     <script src="../js/ticket.js"></script>
     <script src="../js/temas.js"></script>

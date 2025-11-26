@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center">
           <img
-            src="../src/assets/logo.png"
+            src="../img/logo.jpg"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
@@ -38,64 +38,66 @@
       </div>
     </nav>
 
-    <!-- Main-->
-    <div class="container" style="padding-top: 100px">
-      <main class="main-container">
-        <div class="section-bienvenida">
-          <div class="card-bienvenida">
-            <div class="header text-center">
-              <h2>¡Bienvenido a Retro Music!</h2>
-              <p>Tu tienda de música retro y vintage</p>
-            </div>
+    <!-- Main -->
+    <div class="main-content">
+      <div class="container">
+        <main class="main-container">
+          <div class="section-bienvenida">
+            <div class="card-bienvenida">
+              <div class="header text-center">
+                <h2>¡Bienvenido a Retro Music!</h2>
+                <p>Tu tienda de música retro y vintage</p>
+              </div>
 
-            <div class="form-bienvenida text-center mt-4">
-              <label for="nombre-Cliente" class="form-label"
-                >Para comenzar, ingresa tu nombre:</label
-              >
-              <input
-                type="text"
-                id="nombre-Cliente"
-                class="form-control mx-auto mb-3"
-                placeholder="Ingrese su nombre"
-                maxlength="100"
-                style="max-width: 300px"
-              />
-              <button id="btn-continuar" class="btn btn-primary" disabled>Continuar</button>
-            </div>
+              <div class="form-bienvenida text-center mt-4">
+                <label for="nombre-Cliente" class="form-label"
+                  >Para comenzar, ingresa tu nombre:</label
+                >
+                <input
+                  type="text"
+                  id="nombre-Cliente"
+                  class="form-control mx-auto mb-3"
+                  placeholder="Ingrese su nombre"
+                  maxlength="100"
+                  style="max-width: 300px"
+                />
+                <button id="btn-continuar" class="btn btn-primary" disabled>Continuar</button>
+              </div>
 
-            <div class="info-bienvenida mt-5">
-              <h3 class="text-center mb-4">¿Qué encontrarás aquí?</h3>
+              <div class="info-bienvenida mt-5">
+                <h3 class="text-center mb-4">¿Qué encontrarás aquí?</h3>
 
-              <div class="categorias d-flex flex-wrap justify-content-center gap-4">
-                <!-- Vinilos -->
-                <div class="card-categorias card text-center" style="width: 18rem">
-                  <div class="card-body">
-                    <div class="icon-categoria fs-1 mb-2">🎵</div>
-                    <h4 class="card-title">Discos de Vinilo</h4>
-                    <p class="card-text">Colección de vinilos clásicos y raros.</p>
+                <div class="categorias d-flex flex-wrap justify-content-center gap-4">
+                  <!-- Vinilos -->
+                  <div class="card-categorias card text-center" style="width: 18rem">
+                    <div class="card-body">
+                      <div class="icon-categoria fs-1 mb-2">🎵</div>
+                      <h4 class="card-title">Discos de Vinilo</h4>
+                      <p class="card-text">Colección de vinilos clásicos y raros.</p>
+                    </div>
                   </div>
-                </div>
 
-                <!-- CDs -->
-                <div class="card-categorias card text-center" style="width: 18rem">
-                  <div class="card-body">
-                    <div class="icon-categoria fs-1 mb-2">💿</div>
-                    <h4 class="card-title">CD's</h4>
-                    <p class="card-text">Colección de CD's clásicos y raros.</p>
+                  <!-- CDs -->
+                  <div class="card-categorias card text-center" style="width: 18rem">
+                    <div class="card-body">
+                      <div class="icon-categoria fs-1 mb-2">💿</div>
+                      <h4 class="card-title">CD's</h4>
+                      <p class="card-text">Colección de CD's clásicos y raros.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-
-      <!-- Footer -->
-      <footer class="footer text-center mt-5 py-3 border-top">
-        <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
-        <p>Desarrollado por: <strong>Federico Farina</strong></p>
-      </footer>
+        </main>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+      <p>Desarrollado por: <strong>Federico Farina</strong></p>
+    </footer>
 
     <script src="../js/index.js"></script>
     <script src="../js/temas.js"></script>

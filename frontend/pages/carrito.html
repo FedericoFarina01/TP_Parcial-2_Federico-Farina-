@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center">
           <img
-            src="../src/assets/logo.png"
+            src="../img/logo.jpg"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
@@ -39,62 +39,64 @@
     </nav>
 
     <!-- Main -->
-    <div class="container" style="padding-top: 100px">
-      <main class="main-container">
-        <div class="section-carrito">
-          <div class="header text-center mb-4">
-            <h2>🛒 Tu Carrito de Compras</h2>
-          </div>
+    <div class="main-content">
+      <div class="container">
+        <main class="main-container">
+          <div class="section-carrito">
+            <div class="header text-center mb-4">
+              <h2>🛒 Tu Carrito de Compras</h2>
+            </div>
 
-          <!-- Contenido del carrito -->
-          <div class="contenido-carrito row gy-4">
-            <!-- Lista de productos -->
-            <div class="col-12 col-lg-8">
-              <div class="card p-3 shadow-sm">
-                <h4 class="mb-3">Productos en tu carrito</h4>
-                <div id="items-carrito" class="lista-items">
-                  <p class="text-center text-muted carrito-vacio">Tu carrito está vacío.</p>
+            <!-- Contenido del carrito -->
+            <div class="contenido-carrito row gy-4">
+              <!-- Lista de productos -->
+              <div class="col-12 col-lg-8">
+                <div class="card p-3 shadow-sm">
+                  <h4 class="mb-3">Productos en tu carrito</h4>
+                  <div id="items-carrito" class="lista-items">
+                    <p class="text-center text-muted carrito-vacio">Tu carrito está vacío.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resumen del pedido -->
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 shadow-sm">
+                  <h4 class="mb-3">Resumen del Pedido</h4>
+
+                  <div class="linea-resumen d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                  </div>
+                  <div class="linea-resumen d-flex justify-content-between mb-2">
+                    <span>IVA (21%):</span>
+                    <span id="iva">$0.00</span>
+                  </div>
+                  <div class="linea-resumen d-flex justify-content-between fw-bold border-top pt-2">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                  </div>
+
+                  <button id="btn-finalizar" class="btn btn-success w-100 mt-4" disabled>
+                    Finalizar Compra
+                  </button>
+
+                  <a href="productos.html" class="btn btn-outline-secondary w-100 mt-3">
+                    ← Continuar Comprando
+                  </a>
                 </div>
               </div>
             </div>
-
-            <!-- Resumen del pedido -->
-            <div class="col-12 col-lg-4">
-              <div class="card p-4 shadow-sm">
-                <h4 class="mb-3">Resumen del Pedido</h4>
-
-                <div class="linea-resumen d-flex justify-content-between mb-2">
-                  <span>Subtotal:</span>
-                  <span id="subtotal">$0.00</span>
-                </div>
-                <div class="linea-resumen d-flex justify-content-between mb-2">
-                  <span>IVA (21%):</span>
-                  <span id="iva">$0.00</span>
-                </div>
-                <div class="linea-resumen d-flex justify-content-between fw-bold border-top pt-2">
-                  <span>Total:</span>
-                  <span id="total">$0.00</span>
-                </div>
-
-                <button id="btn-finalizar" class="btn btn-success w-100 mt-4" disabled>
-                  Finalizar Compra
-                </button>
-
-                <a href="productos.html" class="btn btn-outline-secondary w-100 mt-3">
-                  ← Continuar Comprando
-                </a>
-              </div>
-            </div>
           </div>
-        </div>
-      </main>
-
-      <!-- Footer -->
-      <footer class="footer text-center mt-5 py-3 border-top">
-        <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
-        <p>Desarrollado por: <strong>Federico Farina</strong></p>
-      </footer>
+        </main>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p><strong>Retro Music</strong> - Sistema de Autoservicio</p>
+      <p>Desarrollado por: <strong>Federico Farina</strong></p>
+    </footer>
 
     <script src="../js/carrito.js"></script>
     <script src="../js/temas.js"></script>

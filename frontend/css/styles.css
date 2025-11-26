@@ -1,7 +1,15 @@
 /* Tema claro (por defecto) */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: white;
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Tema oscuro */
@@ -24,6 +32,20 @@ body.tema-oscuro .navbar,
 body.tema-oscuro .footer {
   background-color: #1e1e1e !important;
   color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 100px;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
 }
 
 /* Botón de tema */
