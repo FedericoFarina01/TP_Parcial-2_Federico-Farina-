@@ -1,5 +1,50 @@
 /* Estilos específicos para el panel de administración */
 
+/* Estructura para footer sticky */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #f8f9fa;
+}
+
+body.tema-oscuro .footer {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* Estilos para navbar */
+.navbar-brand {
+  color: black !important;
+}
+
+body.tema-oscuro .navbar {
+  background-color: #1e1e1e !important;
+}
+
+body.tema-oscuro .navbar-brand {
+  color: white !important;
+}
+
+/* Tabla - centrado vertical */
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
 /* Cards en tema oscuro */
 body.tema-oscuro .card {
   background-color: #1e1e1e;

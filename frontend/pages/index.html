@@ -15,17 +15,16 @@
   <body class="pagina-inicio">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center">
+      <div class="container-fluid justify-content-center">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
           <img
             src="../img/logo.jpg"
             alt="Retro Music Logo"
             class="logo-img me-2"
             style="height: 40px"
           />
+          <span class="fw-bold">Retro Music</span>
         </a>
-
-        <a href="index.html">Retro Music</a>
 
         <!-- Botón tema claro/oscuro -->
         <button
@@ -39,11 +38,11 @@
     </nav>
 
     <!-- Main -->
-    <div class="main-content">
+    <div class="main-content d-flex align-items-center justify-content-center">
       <div class="container">
         <main class="main-container">
-          <div class="section-bienvenida">
-            <div class="card-bienvenida">
+          <div class="section-bienvenida d-flex justify-content-center">
+            <div class="card-bienvenida" style="max-width: 500px; width: 100%">
               <div class="header text-center">
                 <h2>¡Bienvenido a Retro Music!</h2>
                 <p>Tu tienda de música retro y vintage</p>
@@ -62,30 +61,6 @@
                   style="max-width: 300px"
                 />
                 <button id="btn-continuar" class="btn btn-primary" disabled>Continuar</button>
-              </div>
-
-              <div class="info-bienvenida mt-5">
-                <h3 class="text-center mb-4">¿Qué encontrarás aquí?</h3>
-
-                <div class="categorias d-flex flex-wrap justify-content-center gap-4">
-                  <!-- Vinilos -->
-                  <div class="card-categorias card text-center" style="width: 18rem">
-                    <div class="card-body">
-                      <div class="icon-categoria fs-1 mb-2">🎵</div>
-                      <h4 class="card-title">Discos de Vinilo</h4>
-                      <p class="card-text">Colección de vinilos clásicos y raros.</p>
-                    </div>
-                  </div>
-
-                  <!-- CDs -->
-                  <div class="card-categorias card text-center" style="width: 18rem">
-                    <div class="card-body">
-                      <div class="icon-categoria fs-1 mb-2">💿</div>
-                      <h4 class="card-title">CD's</h4>
-                      <p class="card-text">Colección de CD's clásicos y raros.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

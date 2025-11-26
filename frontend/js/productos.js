@@ -82,13 +82,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const estaEnCarrito = productoEnCarrito !== undefined;
     const _cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
 
+    const rutaImagen = producto.imagen.startsWith('fotos/')
+      ? `http://localhost:3000/${producto.imagen}`
+      : producto.imagen;
+
     return `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-      <div class="card" style="width: 18rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-        <div class="card-body">
+      <div class="card h-100" style="width: 18rem;">
+        <img src="${rutaImagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">${producto.nombre}</h5>
-          <p class="card-text">${producto.descripcion}</p>
+          <p class="card-text flex-grow-1">${producto.descripcion}</p>
           <p class="text-primary fw-bold">$${producto.precio.toLocaleString()}</p>
 
           <div class="d-flex gap-2">
@@ -122,7 +126,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   function actualizarContadorCarrito() {
     const carrito = obtenerCarrito();
     const total = carrito.reduce((suma, producto) => suma + producto.cantidad, 0);
+    const cartLink = document.getElementById('cart-link');
+
     if (contadorCarrito) contadorCarrito.textContent = total > 0 ? `(${total})` : '';
+    if (cartLink) cartLink.style.display = total > 0 ? 'block' : 'none';
   }
 
   // Detectar click en botones

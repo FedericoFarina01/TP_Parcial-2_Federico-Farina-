@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = obtenerCarrito();
 
     if (carrito.length === 0) {
-      itemsCarrito.innerHTML = '<p class="text-center text-muted">Tu carrito está vacío.</p>';
+      itemsCarrito.innerHTML = '<p class="text-center text-dark">Tu carrito está vacío.</p>';
       btnFinalizar.disabled = true;
       actualizarResumen(0, 0, 0);
       return;
@@ -92,8 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function actualizarContadorCarrito() {
     const carrito = obtenerCarrito();
     const totalItems = carrito.reduce((suma, item) => suma + item.cantidad, 0);
+    const cartLink = document.getElementById('cart-link');
+
     if (contadorCarrito) {
       contadorCarrito.textContent = totalItems > 0 ? `(${totalItems})` : '';
+    }
+    if (cartLink) {
+      cartLink.style.display = totalItems > 0 ? 'block' : 'none';
     }
   }
 
