@@ -1,37 +1,21 @@
 // Acceso rapido
 document.addEventListener('DOMContentLoaded', () => {
-  const btnAccesoRapido = document.getElementById('btnAccesoRapido');
-  const emailInput = document.getElementById('email');
+  const usuarioInput = document.getElementById('usuario');
   const passwordInput = document.getElementById('password');
-  const loginForm = document.getElementById('loginForm');
+  const loginForm = document.querySelector('form[action="/admin/login"]');
+
+  // Buscar el botón de acceso rápido por su texto
+  const btnAccesoRapido = Array.from(document.querySelectorAll('a.btn')).find(
+    btn => btn.textContent.includes('Acceso Rápido')
+  );
 
   if (btnAccesoRapido) {
-    btnAccesoRapido.addEventListener('click', () => {
-      emailInput.value = 'admin@retromusic.com';
-      passwordInput.value = 'admin123';
-      emailInput.focus();
-    });
-  }
-
-  if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
+    btnAccesoRapido.addEventListener('click', (e) => {
       e.preventDefault();
-
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      const ADMIN_EMAIL = 'admin@retromusic.com';
-      const ADMIN_PASSWORD = 'admin123';
-
-      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-        
-        window.location.href = '/admin/dashboard';
-      } else {
-
-        alert('Credenciales incorrectas. Intente nuevamente.');
-        passwordInput.value = '';
-        passwordInput.focus();
-      }
+      
+      // Completar el formulario
+      usuarioInput.value = 'admin';
+      passwordInput.value = 'admin123';
     });
   }
 });
