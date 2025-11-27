@@ -96,24 +96,15 @@
     "precio": 19000,
     "imagen": "../img/ten.jpg",
     "categoria": "cds",
-    "activo": true
+    "activo": "true"
   },
   {
     "id": 12,
     "nombre": "Californication - Red Hot Chili Peppers",
     "descripcion": "Álbum de 1999 que combina rock alternativo y funk con éxitos como 'Californication' y 'Scar Tissue'.",
     "precio": 24000,
-    "imagen": "fotos/241189468aa7261dcc1e859608797ea3",
+    "imagen": "../img/californication.jpg",
     "categoria": "cds",
-    "activo": "true"
-  },
-  {
-    "id": 13,
-    "nombre": "Disco de pruebas",
-    "descripcion": "Prueba",
-    "precio": 12312,
-    "imagen": "../img/disco.png",
-    "categoria": "vinilos",
-    "activo": false
+    "activo": true
   }
 ]
